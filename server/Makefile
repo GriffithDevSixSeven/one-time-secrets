@@ -7,3 +7,8 @@ postgres-up:
 
 postgres-down:
 	@docker-compose down postgres-service
+
+migrate:
+	@read -p "Enter name migration: " name; \
+	PYTHONPATH=. alembic revision --autogenerate -m $$name
+	@PYTHONPATH=. alembic upgrade head
