@@ -7,7 +7,7 @@ ENV_FILE = Path(__file__).resolve().parent.parent.parent/".env"
 class DBSettings(BaseSettings):
     POSTGRES_PASSWORD : str
     POSTGRES_USER : str
-    POSTGRES_DATABASE : str
+    POSTGRES_DB : str
     DB_URL : str
     model_config = SettingsConfigDict(
         env_file=ENV_FILE,
@@ -15,4 +15,4 @@ class DBSettings(BaseSettings):
     )
 
 
-db_setting = DBSettings()
+db_settings = DBSettings()
